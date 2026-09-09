@@ -7,6 +7,10 @@ const swaggerDocument = {
   },
   servers: [
     {
+      url: 'https://acme-crm.onrender.com/api',
+      description: 'Production API Server (Render)'
+    },
+    {
       url: 'http://localhost:5000/api',
       description: 'Local Development API Server'
     }

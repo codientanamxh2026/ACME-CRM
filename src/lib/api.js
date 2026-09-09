@@ -1,6 +1,5 @@
-// Universal Client-side API fetch wrapper pointing to independent Backend API server
-
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const rawBase = process.env.NEXT_PUBLIC_API_URL || 'https://acme-crm.onrender.com/api';
+const API_BASE = rawBase.endsWith('/api') ? rawBase : `${rawBase.replace(/\/$/, '')}/api`;
 
 export async function fetchApi(endpoint, options = {}) {
   const token = typeof window !== 'undefined' ? localStorage.getItem('crm_token') : null;
