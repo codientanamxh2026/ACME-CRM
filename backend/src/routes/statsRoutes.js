@@ -5,6 +5,7 @@ const { requireAuth } = require('../middlewares/authMiddleware');
 
 router.use(requireAuth);
 
+router.get('/', statsController.getDashboardStats);
 router.get('/dashboard', statsController.getDashboardStats);
 
 module.exports = router;
