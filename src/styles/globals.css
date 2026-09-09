@@ -512,9 +512,10 @@ button {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
-.search-box svg {
+.search-box > svg:first-child {
   position: absolute;
   left: 0.75rem;
   color: var(--text-muted);
@@ -523,6 +524,55 @@ button {
 
 .search-box input {
   padding-left: 2.25rem;
+  width: 100%;
+}
+
+.password-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-box .password-leading-icon {
+  position: absolute;
+  left: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.password-box input.form-input {
+  padding-left: 2.35rem;
+  padding-right: 2.5rem;
+  width: 100%;
+}
+
+.password-box .password-toggle-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+  z-index: 3;
+}
+
+.password-box .password-toggle-btn:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
 }
 
 /* ==========================================================================

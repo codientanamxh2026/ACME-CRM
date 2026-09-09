@@ -187,8 +187,10 @@ export default function LoginPage() {
                 Mật khẩu
               </label>
             </div>
-            <div className="search-box" style={{ position: 'relative' }}>
-              <Lock size={16} />
+            <div className="password-box">
+              <span className="password-leading-icon">
+                <Lock size={16} />
+              </span>
               <input
                 id="login-password"
                 type={showPassword ? 'text' : 'password'}
@@ -196,29 +198,14 @@ export default function LoginPage() {
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                style={{ paddingRight: '2.5rem' }}
                 required
               />
               <button
                 type="button"
+                className="password-toggle-btn"
                 onClick={() => setShowPassword((prev) => !prev)}
                 title={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
                 aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
-                style={{
-                  position: 'absolute',
-                  right: '0.65rem',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  padding: '0.25rem',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-muted)',
-                  borderRadius: '4px'
-                }}
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
               </button>

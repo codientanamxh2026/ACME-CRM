@@ -363,14 +363,14 @@ export default function UsersManagementPage() {
             <label className="form-label">
               {editingUser ? 'Mật Khẩu Mới (Để trống nếu không đổi)' : 'Mật Khẩu Khởi Tạo *'}
             </label>
-            <div style={{ position: 'relative' }}>
+            <div style={{ position: 'relative', display: 'flex', alignItems: 'center', width: '100%' }}>
               <input
                 type={showPassword ? 'text' : 'password'}
                 className="form-input"
                 placeholder="••••••••"
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                style={{ paddingRight: '2.5rem' }}
+                style={{ paddingRight: '2.5rem', width: '100%' }}
                 required={!editingUser}
               />
               <button
@@ -380,18 +380,20 @@ export default function UsersManagementPage() {
                 aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
                 style={{
                   position: 'absolute',
-                  right: '0.65rem',
+                  right: '0.5rem',
                   top: '50%',
                   transform: 'translateY(-50%)',
-                  background: 'none',
+                  width: '2rem',
+                  height: '2rem',
+                  background: 'transparent',
                   border: 'none',
                   cursor: 'pointer',
-                  padding: '0.25rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--text-muted)',
-                  borderRadius: '4px'
+                  borderRadius: '6px',
+                  zIndex: 3
                 }}
               >
                 {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
