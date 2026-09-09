@@ -222,24 +222,6 @@ export default function LoginPage() {
             Đăng Nhập Vào Hệ Thống
           </Button>
         </form>
-
-        {/* Quick Test Admin Demo */}
-        <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
-          <button
-            type="button"
-            onClick={() => handleQuickLogin('admin@crm.local', 'Admin@123456')}
-            className="btn btn-secondary btn-sm"
-            style={{ width: '100%', justifyContent: 'center', gap: '0.5rem', padding: '0.65rem 1rem' }}
-          >
-            <span>👑 Điền nhanh tài khoản Quản trị: <strong>admin@crm.local</strong></span>
-          </button>
-        </div>
-
-        {/* Security badge */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', marginTop: '1.5rem', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-          <Shield size={13} color="var(--success)" />
-          <span>Bảo mật JWT 256-bit & Mật khẩu mã hóa Bcrypt</span>
-        </div>
       </div>
     </div>
   );
