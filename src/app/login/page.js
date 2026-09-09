@@ -211,61 +211,16 @@ export default function LoginPage() {
           </Button>
         </form>
 
-        {/* Quick Test Role Switcher */}
-        <div style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem', textAlign: 'center' }}>
-            Chọn nhanh tài khoản mẫu để trải nghiệm (RBAC)
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-            <button
-              type="button"
-              onClick={() => handleQuickLogin('admin@crm.local', 'Admin@123456')}
-              className="btn btn-secondary btn-sm"
-              style={{ justifyContent: 'flex-start', padding: '0.5rem 0.65rem' }}
-            >
-              <div style={{ textAlign: 'left', minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>👑 Admin</div>
-                <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Toàn quyền hệ thống</div>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleQuickLogin('manager@crm.local', 'Manager@123456')}
-              className="btn btn-secondary btn-sm"
-              style={{ justifyContent: 'flex-start', padding: '0.5rem 0.65rem' }}
-            >
-              <div style={{ textAlign: 'left', minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>💼 Trưởng phòng KD</div>
-                <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Quản lý bán hàng</div>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleQuickLogin('sales@crm.local', 'Sales@123456')}
-              className="btn btn-secondary btn-sm"
-              style={{ justifyContent: 'flex-start', padding: '0.5rem 0.65rem' }}
-            >
-              <div style={{ textAlign: 'left', minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>🎯 Nhân viên KD</div>
-                <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Khách & đơn hàng</div>
-              </div>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => handleQuickLogin('inventory@crm.local', 'Inventory@123456')}
-              className="btn btn-secondary btn-sm"
-              style={{ justifyContent: 'flex-start', padding: '0.5rem 0.65rem' }}
-            >
-              <div style={{ textAlign: 'left', minWidth: 0 }}>
-                <div style={{ fontWeight: 600, fontSize: '0.8rem' }}>📦 Thủ kho</div>
-                <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>Nhập / xuất / tồn</div>
-              </div>
-            </button>
-          </div>
+        {/* Quick Test Admin Demo */}
+        <div style={{ marginTop: '1.75rem', paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
+          <button
+            type="button"
+            onClick={() => handleQuickLogin('admin@crm.local', 'Admin@123456')}
+            className="btn btn-secondary btn-sm"
+            style={{ width: '100%', justifyContent: 'center', gap: '0.5rem', padding: '0.65rem 1rem' }}
+          >
+            <span>👑 Điền nhanh tài khoản Quản trị: <strong>admin@crm.local</strong></span>
+          </button>
         </div>
 
         {/* Security badge */}

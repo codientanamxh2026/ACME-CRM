@@ -20,16 +20,16 @@ export default function AppLayout({ children }) {
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  // If on login page, render children directly
-  const isLoginPage = pathname === '/login';
+  // If on public page (landing home or login page), render children directly
+  const isPublicPage = pathname === '/' || pathname === '/login';
 
   useEffect(() => {
-    if (isClient && !loading && !user && !isLoginPage) {
+    if (isClient && !loading && !user && !isPublicPage) {
       router.push('/login');
     }
-  }, [user, loading, isLoginPage, router, isClient]);
+  }, [user, loading, isPublicPage, router, isClient]);
 
-  if (isLoginPage) {
+  if (isPublicPage) {
     return <>{children}</>;
   }
 

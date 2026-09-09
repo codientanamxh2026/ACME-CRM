@@ -10,39 +10,6 @@ module.exports = {
       department: 'Ban Giám Đốc',
       status: 'active',
       createdAt: '2026-01-01T08:00:00Z'
-    },
-    {
-      id: 'usr-2',
-      name: 'Trần Thị Mai',
-      email: 'manager@crm.local',
-      passwordHash: '$2b$10$uC1mGEe0fz6s./RhcjLgoOYRxRk8QRPyGWK6cGh12DlbLnsHCBQEm',
-      role: 'manager',
-      phone: '0908889999',
-      department: 'Phòng Kinh Doanh',
-      status: 'active',
-      createdAt: '2026-01-05T08:30:00Z'
-    },
-    {
-      id: 'usr-3',
-      name: 'Lê Quốc Huy',
-      email: 'sales@crm.local',
-      passwordHash: '$2b$10$nN6.P.BQjTl6n6TzMj1MEOPXf9/7EmEb/Ri.5KKgqLfEs2pvuCqza',
-      role: 'staff',
-      phone: '0912348877',
-      department: 'Phòng Kinh Doanh',
-      status: 'active',
-      createdAt: '2026-01-10T09:00:00Z'
-    },
-    {
-      id: 'usr-4',
-      name: 'Phạm Văn Kho',
-      email: 'inventory@crm.local',
-      passwordHash: '$2b$10$BHQmOncV9a/1vexlYwg8l.sfjhAa7S9cP2Kzn7bd5gpeCIr3aCKy6',
-      role: 'inventory',
-      phone: '0934567890',
-      department: 'Bộ phận Kho & Vận chuyển',
-      status: 'active',
-      createdAt: '2026-01-12T10:00:00Z'
     }
   ],
 

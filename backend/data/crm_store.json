@@ -10,39 +10,6 @@
       "department": "Ban Giám Đốc",
       "status": "active",
       "createdAt": "2026-01-01T08:00:00Z"
-    },
-    {
-      "id": "usr-2",
-      "name": "Trần Thị Mai",
-      "email": "manager@crm.local",
-      "passwordHash": "$2b$10$uC1mGEe0fz6s./RhcjLgoOYRxRk8QRPyGWK6cGh12DlbLnsHCBQEm",
-      "role": "manager",
-      "phone": "0908889999",
-      "department": "Phòng Kinh Doanh",
-      "status": "active",
-      "createdAt": "2026-01-05T08:30:00Z"
-    },
-    {
-      "id": "usr-3",
-      "name": "Lê Quốc Huy",
-      "email": "sales@crm.local",
-      "passwordHash": "$2b$10$nN6.P.BQjTl6n6TzMj1MEOPXf9/7EmEb/Ri.5KKgqLfEs2pvuCqza",
-      "role": "staff",
-      "phone": "0912348877",
-      "department": "Phòng Kinh Doanh",
-      "status": "active",
-      "createdAt": "2026-01-10T09:00:00Z"
-    },
-    {
-      "id": "usr-4",
-      "name": "Phạm Văn Kho",
-      "email": "inventory@crm.local",
-      "passwordHash": "$2b$10$BHQmOncV9a/1vexlYwg8l.sfjhAa7S9cP2Kzn7bd5gpeCIr3aCKy6",
-      "role": "inventory",
-      "phone": "0934567890",
-      "department": "Bộ phận Kho & Vận chuyển",
-      "status": "active",
-      "createdAt": "2026-01-12T10:00:00Z"
     }
   ],
   "customers": [
@@ -57,8 +24,8 @@
       "status": "won",
       "group": "Doanh nghiệp",
       "revenue": 85000000,
-      "assignedStaffId": "usr-3",
-      "assignedStaffName": "Lê Quốc Huy",
+      "assignedStaffId": "usr-1",
+      "assignedStaffName": "Nguyễn Hải Đăng",
       "notes": "Khách hàng VIP, mua phụ tùng cơ khí định kỳ mỗi tháng.",
       "createdAt": "2026-01-15T09:30:00Z"
     },
@@ -73,8 +40,8 @@
       "status": "negotiating",
       "group": "Khách hàng Lớn",
       "revenue": 142000000,
-      "assignedStaffId": "usr-2",
-      "assignedStaffName": "Trần Thị Mai",
+      "assignedStaffId": "usr-1",
+      "assignedStaffName": "Nguyễn Hải Đăng",
       "notes": "Đang thương thảo hợp đồng cung cấp thiết bị thông minh quý 3.",
       "createdAt": "2026-01-20T14:15:00Z"
     },
@@ -89,8 +56,8 @@
       "status": "contacted",
       "group": "Đại lý",
       "revenue": 35000000,
-      "assignedStaffId": "usr-3",
-      "assignedStaffName": "Lê Quốc Huy",
+      "assignedStaffId": "usr-1",
+      "assignedStaffName": "Nguyễn Hải Đăng",
       "notes": "Đã gửi báo giá thiết bị giám sát an ninh.",
       "createdAt": "2026-02-02T11:00:00Z"
     },
@@ -105,8 +72,8 @@
       "status": "lead",
       "group": "Doanh nghiệp",
       "revenue": 0,
-      "assignedStaffId": "usr-3",
-      "assignedStaffName": "Lê Quốc Huy",
+      "assignedStaffId": "usr-1",
+      "assignedStaffName": "Nguyễn Hải Đăng",
       "notes": "Khách hàng mới đăng ký tư vấn qua website.",
       "createdAt": "2026-02-18T16:20:00Z"
     },
@@ -121,8 +88,8 @@
       "status": "won",
       "group": "F&B",
       "revenue": 62000000,
-      "assignedStaffId": "usr-2",
-      "assignedStaffName": "Trần Thị Mai",
+      "assignedStaffId": "usr-1",
+      "assignedStaffName": "Nguyễn Hải Đăng",
       "notes": "Vừa lắp đặt hệ thống máy tính tiền và in bill.",
       "createdAt": "2026-02-22T10:00:00Z"
     }
@@ -244,8 +211,8 @@
       "status": "completed",
       "paymentStatus": "paid",
       "paymentMethod": "bank_transfer",
-      "createdBy": "usr-3",
-      "createdByName": "Lê Quốc Huy",
+      "createdBy": "usr-1",
+      "createdByName": "Nguyễn Hải Đăng",
       "notes": "Đã giao hàng và thanh toán chuyển khoản qua Vietcombank.",
       "createdAt": "2026-02-10T10:15:00Z"
     },
@@ -287,8 +254,8 @@
       "status": "completed",
       "paymentStatus": "paid",
       "paymentMethod": "bank_transfer",
-      "createdBy": "usr-2",
-      "createdByName": "Trần Thị Mai",
+      "createdBy": "usr-1",
+      "createdByName": "Nguyễn Hải Đăng",
       "notes": "Đơn hàng lắp đặt cho 3 chi nhánh mới.",
       "createdAt": "2026-02-24T14:30:00Z"
     },
@@ -314,8 +281,8 @@
       "status": "shipping",
       "paymentStatus": "partial",
       "paymentMethod": "cod",
-      "createdBy": "usr-3",
-      "createdByName": "Lê Quốc Huy",
+      "createdBy": "usr-1",
+      "createdByName": "Nguyễn Hải Đăng",
       "notes": "Đã cọc 2.000.000đ, thu hộ COD 5.000.000đ còn lại.",
       "createdAt": "2026-03-01T09:00:00Z"
     },
@@ -341,8 +308,8 @@
       "status": "confirmed",
       "paymentStatus": "unpaid",
       "paymentMethod": "bank_transfer",
-      "createdBy": "usr-2",
-      "createdByName": "Trần Thị Mai",
+      "createdBy": "usr-1",
+      "createdByName": "Nguyễn Hải Đăng",
       "notes": "Đã ký duyệt đơn, chuẩn bị xuất kho giao trong ngày mai.",
       "createdAt": "2026-03-02T11:45:00Z"
     }
