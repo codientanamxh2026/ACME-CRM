@@ -1,0 +1,169 @@
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  MANAGER
+  STAFF
+  INVENTORY
+}
+
+enum CustomerStatus {
+  LEAD
+  CONTACTED
+  NEGOTIATING
+  WON
+  CHURNED
+}
+
+enum ProductStatus {
+  IN_STOCK
+  LOW_STOCK
+  OUT_OF_STOCK
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  SHIPPING
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PARTIAL
+  PAID
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         Role      @default(STAFF)
+  department   String?
+  phone        String?
+  status       String    @default("active")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  customers    Customer[]
+  orders       Order[]
+
+  @@map("users")
+}
+
+model Customer {
+  id              String         @id @default(uuid())
+  code            String         @unique
+  name            String
+  contactPerson   String?
+  phone           String
+  email           String?
+  address         String?
+  status          CustomerStatus @default(LEAD)
+  group           String         @default("Doanh nghiệp")
+  revenue         Decimal        @default(0)
+  notes           String?
+  assignedStaffId String?
+  assignedStaff   User?          @relation(fields: [assignedStaffId], references: [id])
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  orders          Order[]
+
+  @@map("customers")
+}
+
+model Product {
+  id          String        @id @default(uuid())
+  sku         String        @unique
+  name        String
+  category    String        @default("Hàng hóa thông dụng")
+  unit        String        @default("Cái")
+  costPrice   Decimal       @default(0)
+  salePrice   Decimal       @default(0)
+  stock       Int           @default(0)
+  minStock    Int           @default(5)
+  status      ProductStatus @default(IN_STOCK)
+  description String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  orderItems  OrderItem[]
+
+  @@map("products")
+}
+
+model Order {
+  id            String        @id @default(uuid())
+  orderNumber   String        @unique
+  customerId    String
+  customer      Customer      @relation(fields: [customerId], references: [id])
+  customerName  String
+  subtotal      Decimal       @default(0)
+  discount      Decimal       @default(0)
+  totalAmount   Decimal       @default(0)
+  status        OrderStatus   @default(PENDING)
+  paymentStatus PaymentStatus @default(UNPAID)
+  paymentMethod String        @default("bank_transfer")
+  createdBy     String?
+  createdByUser User?         @relation(fields: [createdBy], references: [id])
+  createdByName String?
+  notes         String?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+
+  items         OrderItem[]
+
+  @@map("orders")
+}
+
+model OrderItem {
+  id        String   @id @default(uuid())
+  orderId   String
+  order     Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  name      String
+  sku       String
+  price     Decimal
+  quantity  Int      @default(1)
+  total     Decimal
+  createdAt DateTime @default(now())
+
+  @@map("order_items")
+}
+
+model DynamicTable {
+  id             String   @id @default(uuid())
+  title          String
+  sourceFileName String
+  storedFilePath String?
+  rowCount       Int
+  columns        Json
+  rows           Json
+  importedBy     String?
+  importedAt     DateTime @default(now())
+
+  @@map("dynamic_tables")
+}
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  action      String
+  description String
+  userId      String?
+  userName    String?
+  timestamp   DateTime @default(now())
+
+  @@map("audit_logs")
+}

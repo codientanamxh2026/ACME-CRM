@@ -1,0 +1,29 @@
+{
+  "name": "crm-acme",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "backend": "node backend/src/server.js",
+    "backend:dev": "node --watch backend/src/server.js",
+    "seed:supabase": "node backend/seed-supabase.js",
+    "migrate:supabase": "node backend/migrate-supabase.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.116.0",
+    "bcryptjs": "^3.0.3",
+    "jose": "^6.2.10",
+    "lucide-react": "^1.39.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4"
+  }
+}

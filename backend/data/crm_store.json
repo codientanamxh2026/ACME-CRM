@@ -1,0 +1,478 @@
+{
+  "users": [
+    {
+      "id": "usr-1",
+      "name": "Nguyễn Hải Đăng",
+      "email": "admin@crm.local",
+      "passwordHash": "$2b$10$kFDMDAdskxrzGP4RzBniYerAYy5cpP.4jHLId2dyz1e.3dXzc/qe6",
+      "role": "admin",
+      "phone": "0901234567",
+      "department": "Ban Giám Đốc",
+      "status": "active",
+      "createdAt": "2026-01-01T08:00:00Z"
+    },
+    {
+      "id": "usr-2",
+      "name": "Trần Thị Mai",
+      "email": "manager@crm.local",
+      "passwordHash": "$2b$10$uC1mGEe0fz6s./RhcjLgoOYRxRk8QRPyGWK6cGh12DlbLnsHCBQEm",
+      "role": "manager",
+      "phone": "0908889999",
+      "department": "Phòng Kinh Doanh",
+      "status": "active",
+      "createdAt": "2026-01-05T08:30:00Z"
+    },
+    {
+      "id": "usr-3",
+      "name": "Lê Quốc Huy",
+      "email": "sales@crm.local",
+      "passwordHash": "$2b$10$nN6.P.BQjTl6n6TzMj1MEOPXf9/7EmEb/Ri.5KKgqLfEs2pvuCqza",
+      "role": "staff",
+      "phone": "0912348877",
+      "department": "Phòng Kinh Doanh",
+      "status": "active",
+      "createdAt": "2026-01-10T09:00:00Z"
+    },
+    {
+      "id": "usr-4",
+      "name": "Phạm Văn Kho",
+      "email": "inventory@crm.local",
+      "passwordHash": "$2b$10$BHQmOncV9a/1vexlYwg8l.sfjhAa7S9cP2Kzn7bd5gpeCIr3aCKy6",
+      "role": "inventory",
+      "phone": "0934567890",
+      "department": "Bộ phận Kho & Vận chuyển",
+      "status": "active",
+      "createdAt": "2026-01-12T10:00:00Z"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "code": "KH-001",
+      "name": "Công ty TNHH Cơ Khí An Phát",
+      "contactPerson": "Vũ Minh Tuấn",
+      "phone": "0987654321",
+      "email": "tuan.anphat@gmail.com",
+      "address": "Số 45, Đường 3/2, Quận 10, TP.HCM",
+      "status": "won",
+      "group": "Doanh nghiệp",
+      "revenue": 85000000,
+      "assignedStaffId": "usr-3",
+      "assignedStaffName": "Lê Quốc Huy",
+      "notes": "Khách hàng VIP, mua phụ tùng cơ khí định kỳ mỗi tháng.",
+      "createdAt": "2026-01-15T09:30:00Z"
+    },
+    {
+      "id": "cust-2",
+      "code": "KH-002",
+      "name": "Tập đoàn Bán lẻ VinTech",
+      "contactPerson": "Hoàng Lan Anh",
+      "phone": "0918765432",
+      "email": "lananh@vintech.vn",
+      "address": "Tầng 12, Tòa nhà VinTech, Cầu Giấy, Hà Nội",
+      "status": "negotiating",
+      "group": "Khách hàng Lớn",
+      "revenue": 142000000,
+      "assignedStaffId": "usr-2",
+      "assignedStaffName": "Trần Thị Mai",
+      "notes": "Đang thương thảo hợp đồng cung cấp thiết bị thông minh quý 3.",
+      "createdAt": "2026-01-20T14:15:00Z"
+    },
+    {
+      "id": "cust-3",
+      "code": "KH-003",
+      "name": "Cửa hàng Thiết bị Tân Thời",
+      "contactPerson": "Đặng Quốc Bảo",
+      "phone": "0903112233",
+      "email": "baotan@tanthoi.com",
+      "address": "102 Hải Phòng, Q. Hải Châu, Đà Nẵng",
+      "status": "contacted",
+      "group": "Đại lý",
+      "revenue": 35000000,
+      "assignedStaffId": "usr-3",
+      "assignedStaffName": "Lê Quốc Huy",
+      "notes": "Đã gửi báo giá thiết bị giám sát an ninh.",
+      "createdAt": "2026-02-02T11:00:00Z"
+    },
+    {
+      "id": "cust-4",
+      "code": "KH-004",
+      "name": "Công ty CP Xây Dựng Tiến Phát",
+      "contactPerson": "Bùi Đức Hùng",
+      "phone": "0945671234",
+      "email": "hungbd@tienphatcorp.vn",
+      "address": "228 Lê Duẩn, TP. Buôn Ma Thuột",
+      "status": "lead",
+      "group": "Doanh nghiệp",
+      "revenue": 0,
+      "assignedStaffId": "usr-3",
+      "assignedStaffName": "Lê Quốc Huy",
+      "notes": "Khách hàng mới đăng ký tư vấn qua website.",
+      "createdAt": "2026-02-18T16:20:00Z"
+    },
+    {
+      "id": "cust-5",
+      "code": "KH-005",
+      "name": "Chuỗi Coffee & Bakery Sài Gòn",
+      "contactPerson": "Nguyễn Bích Ngọc",
+      "phone": "0978901234",
+      "email": "ngoc.nb@saigoncoffee.vn",
+      "address": "77 Nguyễn Đình Chiểu, Quận 3, TP.HCM",
+      "status": "won",
+      "group": "F&B",
+      "revenue": 62000000,
+      "assignedStaffId": "usr-2",
+      "assignedStaffName": "Trần Thị Mai",
+      "notes": "Vừa lắp đặt hệ thống máy tính tiền và in bill.",
+      "createdAt": "2026-02-22T10:00:00Z"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-1",
+      "sku": "SP-POS-01",
+      "name": "Máy bán hàng POS Cảm ứng Sunmi D2s",
+      "category": "Thiết bị POS",
+      "costPrice": 4200000,
+      "salePrice": 6500000,
+      "stock": 18,
+      "minStock": 5,
+      "unit": "Bộ",
+      "status": "in_stock",
+      "description": "Màn hình 15.6 inch Full HD cảm ứng điện dung, tích hợp máy in nhiệt 80mm.",
+      "createdAt": "2026-01-10T08:00:00Z"
+    },
+    {
+      "id": "prod-2",
+      "sku": "SP-SCAN-02",
+      "name": "Máy quét mã vạch 2D Không dây Honeywell",
+      "category": "Phụ kiện",
+      "costPrice": 1100000,
+      "salePrice": 1850000,
+      "stock": 4,
+      "minStock": 10,
+      "unit": "Cái",
+      "status": "low_stock",
+      "description": "Đọc nhanh mọi mã 1D và 2D QR Code, kết nối Bluetooth 5.0 xa 30m.",
+      "createdAt": "2026-01-12T09:30:00Z"
+    },
+    {
+      "id": "prod-3",
+      "sku": "SP-PRN-03",
+      "name": "Máy in hóa đơn nhiệt Xprinter XP-Q200",
+      "category": "Máy in hóa đơn",
+      "costPrice": 850000,
+      "salePrice": 1350000,
+      "stock": 32,
+      "minStock": 8,
+      "unit": "Cái",
+      "status": "in_stock",
+      "description": "Tốc độ in 200mm/s, dao cắt tự động, cổng USB + LAN.",
+      "createdAt": "2026-01-14T10:00:00Z"
+    },
+    {
+      "id": "prod-4",
+      "sku": "SP-DRW-04",
+      "name": "Ngăn kéo đựng tiền thu ngân Maken MK-410",
+      "category": "Phụ kiện",
+      "costPrice": 550000,
+      "salePrice": 950000,
+      "stock": 2,
+      "minStock": 5,
+      "unit": "Cái",
+      "status": "low_stock",
+      "description": "Thép cao cấp sơn tĩnh điện, 5 ngăn tiền giấy và 4 ngăn tiền xu.",
+      "createdAt": "2026-01-15T11:15:00Z"
+    },
+    {
+      "id": "prod-5",
+      "sku": "SP-ROUTER-05",
+      "name": "Router Wifi Chuyên dụng DrayTek Vigor 2927",
+      "category": "Thiết bị mạng",
+      "costPrice": 3100000,
+      "salePrice": 4600000,
+      "stock": 12,
+      "minStock": 4,
+      "unit": "Bộ",
+      "status": "in_stock",
+      "description": "Chịu tải 150 người dùng đồng thời, 2 cổng WAN cân bằng tải.",
+      "createdAt": "2026-01-18T14:40:00Z"
+    },
+    {
+      "id": "prod-6",
+      "sku": "SP-PAP-06",
+      "name": "Thùng Giấy in nhiệt K80 phi 45mm (100 cuộn)",
+      "category": "Vật tư tiêu hao",
+      "costPrice": 420000,
+      "salePrice": 650000,
+      "stock": 45,
+      "minStock": 15,
+      "unit": "Thùng",
+      "status": "in_stock",
+      "description": "Giấy in nhiệt Oji Nhật Bản bọc bạc từng cuộn chống ẩm.",
+      "createdAt": "2026-01-20T16:00:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1",
+      "orderNumber": "ORD-2026-001",
+      "customerId": "cust-1",
+      "customerName": "Công ty TNHH Cơ Khí An Phát",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Máy bán hàng POS Cảm ứng Sunmi D2s",
+          "sku": "SP-POS-01",
+          "price": 6500000,
+          "quantity": 2,
+          "total": 13000000
+        },
+        {
+          "productId": "prod-3",
+          "name": "Máy in hóa đơn nhiệt Xprinter XP-Q200",
+          "sku": "SP-PRN-03",
+          "price": 1350000,
+          "quantity": 2,
+          "total": 2700000
+        }
+      ],
+      "subtotal": 15700000,
+      "discount": 700000,
+      "tax": 0,
+      "totalAmount": 15000000,
+      "status": "completed",
+      "paymentStatus": "paid",
+      "paymentMethod": "bank_transfer",
+      "createdBy": "usr-3",
+      "createdByName": "Lê Quốc Huy",
+      "notes": "Đã giao hàng và thanh toán chuyển khoản qua Vietcombank.",
+      "createdAt": "2026-02-10T10:15:00Z"
+    },
+    {
+      "id": "ord-2",
+      "orderNumber": "ORD-2026-002",
+      "customerId": "cust-5",
+      "customerName": "Chuỗi Coffee & Bakery Sài Gòn",
+      "items": [
+        {
+          "productId": "prod-1",
+          "name": "Máy bán hàng POS Cảm ứng Sunmi D2s",
+          "sku": "SP-POS-01",
+          "price": 6500000,
+          "quantity": 3,
+          "total": 19500000
+        },
+        {
+          "productId": "prod-4",
+          "name": "Ngăn kéo đựng tiền thu ngân Maken MK-410",
+          "sku": "SP-DRW-04",
+          "price": 950000,
+          "quantity": 3,
+          "total": 2850000
+        },
+        {
+          "productId": "prod-6",
+          "name": "Thùng Giấy in nhiệt K80 phi 45mm (100 cuộn)",
+          "sku": "SP-PAP-06",
+          "price": 650000,
+          "quantity": 5,
+          "total": 3250000
+        }
+      ],
+      "subtotal": 25600000,
+      "discount": 1600000,
+      "tax": 0,
+      "totalAmount": 24000000,
+      "status": "completed",
+      "paymentStatus": "paid",
+      "paymentMethod": "bank_transfer",
+      "createdBy": "usr-2",
+      "createdByName": "Trần Thị Mai",
+      "notes": "Đơn hàng lắp đặt cho 3 chi nhánh mới.",
+      "createdAt": "2026-02-24T14:30:00Z"
+    },
+    {
+      "id": "ord-3",
+      "orderNumber": "ORD-2026-003",
+      "customerId": "cust-3",
+      "customerName": "Cửa hàng Thiết bị Tân Thời",
+      "items": [
+        {
+          "productId": "prod-2",
+          "name": "Máy quét mã vạch 2D Không dây Honeywell",
+          "sku": "SP-SCAN-02",
+          "price": 1850000,
+          "quantity": 4,
+          "total": 7400000
+        }
+      ],
+      "subtotal": 7400000,
+      "discount": 400000,
+      "tax": 0,
+      "totalAmount": 7000000,
+      "status": "shipping",
+      "paymentStatus": "partial",
+      "paymentMethod": "cod",
+      "createdBy": "usr-3",
+      "createdByName": "Lê Quốc Huy",
+      "notes": "Đã cọc 2.000.000đ, thu hộ COD 5.000.000đ còn lại.",
+      "createdAt": "2026-03-01T09:00:00Z"
+    },
+    {
+      "id": "ord-4",
+      "orderNumber": "ORD-2026-004",
+      "customerId": "cust-2",
+      "customerName": "Tập đoàn Bán lẻ VinTech",
+      "items": [
+        {
+          "productId": "prod-5",
+          "name": "Router Wifi Chuyên dụng DrayTek Vigor 2927",
+          "sku": "SP-ROUTER-05",
+          "price": 4600000,
+          "quantity": 5,
+          "total": 23000000
+        }
+      ],
+      "subtotal": 23000000,
+      "discount": 1000000,
+      "tax": 0,
+      "totalAmount": 22000000,
+      "status": "confirmed",
+      "paymentStatus": "unpaid",
+      "paymentMethod": "bank_transfer",
+      "createdBy": "usr-2",
+      "createdByName": "Trần Thị Mai",
+      "notes": "Đã ký duyệt đơn, chuẩn bị xuất kho giao trong ngày mai.",
+      "createdAt": "2026-03-02T11:45:00Z"
+    }
+  ],
+  "dynamicTables": [
+    {
+      "id": "table-sample-1",
+      "title": "Danh sách Khảo sát Khách hàng Tiềm năng Q1",
+      "sourceFileName": "danh-sach-khao-sat-q1.xlsx",
+      "importedAt": "2026-02-28T15:30:00Z",
+      "importedBy": "Lê Quốc Huy",
+      "rowCount": 4,
+      "columns": [
+        {
+          "key": "stt",
+          "label": "STT",
+          "type": "number"
+        },
+        {
+          "key": "ten_doanh_nghiep",
+          "label": "Tên Doanh Nghiệp",
+          "type": "string"
+        },
+        {
+          "key": "nguoi_lien_he",
+          "label": "Người Liên Hệ",
+          "type": "string"
+        },
+        {
+          "key": "so_dien_thoai",
+          "label": "Số Điện Thoại",
+          "type": "phone"
+        },
+        {
+          "key": "email",
+          "label": "Email",
+          "type": "email"
+        },
+        {
+          "key": "nhu_cau",
+          "label": "Nhu Cầu Thiết Bị",
+          "type": "string"
+        },
+        {
+          "key": "ngan_sach_du_kien",
+          "label": "Ngân Sách Dự Kiến (VNĐ)",
+          "type": "currency"
+        },
+        {
+          "key": "trang_thai",
+          "label": "Trạng Thái",
+          "type": "status"
+        }
+      ],
+      "rows": [
+        {
+          "stt": 1,
+          "ten_doanh_nghiep": "Chuỗi Trà Sữa Phúc Long Tân Bình",
+          "nguoi_lien_he": "Trần Văn Long",
+          "so_dien_thoai": "0938123456",
+          "email": "long.phuclong@gmail.com",
+          "nhu_cau": "4 Máy POS + 4 Máy in bill nhiệt",
+          "ngan_sach_du_kien": 32000000,
+          "trang_thai": "Đang tư vấn"
+        },
+        {
+          "stt": 2,
+          "ten_doanh_nghiep": "Công ty May Mặc Việt Thắng",
+          "nguoi_lien_he": "Ngô Thùy Trang",
+          "so_dien_thoai": "0977223344",
+          "email": "trang.ngo@vietthang.vn",
+          "nhu_cau": "10 Máy quét mã vạch kiểm kê kho",
+          "ngan_sach_du_kien": 18500000,
+          "trang_thai": "Đã gửi báo giá"
+        },
+        {
+          "stt": 3,
+          "ten_doanh_nghiep": "Siêu thị Mini Mart Quận 7",
+          "nguoi_lien_he": "Lê Hoàng Nam",
+          "so_dien_thoai": "0909556677",
+          "email": "nam.minimart@yahoo.com",
+          "nhu_cau": "Hệ thống POS bán lẻ trọn gói",
+          "ngan_sach_du_kien": 25000000,
+          "trang_thai": "Hẹn gặp demo"
+        },
+        {
+          "stt": 4,
+          "ten_doanh_nghiep": "Trung tâm Ngoại ngữ Alpha",
+          "nguoi_lien_he": "Phan Minh Khang",
+          "so_dien_thoai": "0919887766",
+          "email": "khang@alphacenter.edu.vn",
+          "nhu_cau": "2 Máy in hóa đơn thu học phí",
+          "ngan_sach_du_kien": 2700000,
+          "trang_thai": "Chờ phản hồi"
+        }
+      ]
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-1788405285974",
+      "action": "USER_LOGIN",
+      "description": "Người dùng Nguyễn Hải Đăng (admin@crm.local) đăng nhập qua Backend REST API.",
+      "userId": "usr-1",
+      "userName": "Nguyễn Hải Đăng",
+      "timestamp": "2026-09-03T03:14:45.974Z"
+    },
+    {
+      "id": "log-1788403291048",
+      "action": "USER_LOGIN",
+      "description": "Người dùng Nguyễn Hải Đăng (admin@crm.local) đăng nhập qua Backend REST API.",
+      "userId": "usr-1",
+      "userName": "Nguyễn Hải Đăng",
+      "timestamp": "2026-09-03T02:41:31.048Z"
+    },
+    {
+      "id": "log-1",
+      "action": "INIT_SYSTEM",
+      "description": "Hệ thống Backend API & Quản lý kho được khởi tạo thành công.",
+      "userId": "usr-1",
+      "userName": "Nguyễn Hải Đăng (Quản trị)",
+      "timestamp": "2026-01-01T08:00:00Z"
+    },
+    {
+      "id": "log-2",
+      "action": "IMPORT_DATA",
+      "description": "Nhập bảng dữ liệu khảo sát khách hàng Q1 từ file danh-sach-khao-sat-q1.xlsx",
+      "userId": "usr-3",
+      "userName": "Lê Quốc Huy",
+      "timestamp": "2026-02-28T15:30:00Z"
+    }
+  ]
+}
