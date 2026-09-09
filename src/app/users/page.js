@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { ShieldCheck, UserPlus, Edit2, Trash2, Key, History, AlertCircle } from 'lucide-react';
+import { ShieldCheck, UserPlus, Edit2, Trash2, Key, History, AlertCircle, Eye, EyeOff } from 'lucide-react';
 import DataTable from '@/components/ui/DataTable';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
@@ -15,6 +15,7 @@ export default function UsersManagementPage() {
   const [users, setUsers] = useState([]);
   const [auditLogs, setAuditLogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showPassword, setShowPassword] = useState(false);
   const { user: currentUser, hasRole } = useAuth();
 
   // Modals
@@ -362,14 +363,40 @@ export default function UsersManagementPage() {
             <label className="form-label">
               {editingUser ? 'Mật Khẩu Mới (Để trống nếu không đổi)' : 'Mật Khẩu Khởi Tạo *'}
             </label>
-            <input
-              type="password"
-              className="form-input"
-              placeholder="••••••••"
-              value={formData.password}
-              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              required={!editingUser}
-            />
+            <div style={{ position: 'relative' }}>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                className="form-input"
+                placeholder="••••••••"
+                value={formData.password}
+                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                style={{ paddingRight: '2.5rem' }}
+                required={!editingUser}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                title={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
+                aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
+                style={{
+                  position: 'absolute',
+                  right: '0.65rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '0.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--text-muted)',
+                  borderRadius: '4px'
+                }}
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
+            </div>
           </div>
 
           <div className="form-group">

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Shield, Lock, Mail, AlertCircle, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Shield, Lock, Mail, AlertCircle, ArrowRight, Sun, Moon, Eye, EyeOff } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useTheme } from '@/context/ThemeContext';
 import Button from '@/components/ui/Button';
@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -186,17 +187,41 @@ export default function LoginPage() {
                 Mật khẩu
               </label>
             </div>
-            <div className="search-box">
+            <div className="search-box" style={{ position: 'relative' }}>
               <Lock size={16} />
               <input
                 id="login-password"
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 className="form-input"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                style={{ paddingRight: '2.5rem' }}
                 required
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                title={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
+                aria-label={showPassword ? 'Ẩn mật khẩu' : 'Hiển thị mật khẩu'}
+                style={{
+                  position: 'absolute',
+                  right: '0.65rem',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '0.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--text-muted)',
+                  borderRadius: '4px'
+                }}
+              >
+                {showPassword ? <EyeOff size={16} /> : <Eye size={16} />}
+              </button>
             </div>
           </div>
 
